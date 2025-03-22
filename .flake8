@@ -1,0 +1,14 @@
+[flake8]
+# Set maximum line length to 88 (for consistency with Black's default line length)
+max-line-length = 88
+
+# Ignore specific warnings (for example, E501 for line length, which Black handles)
+ignore = E501
+
+# Set the verbosity level for Flake8 (higher means more details)
+verbosity = 2
+
+# Enable or disable specific checks
+enable-extensions = G
+
+# Additional rules can be added as per your project requirements

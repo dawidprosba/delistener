@@ -1,0 +1,3 @@
+[tool.black]
+line-length = 88   # Set to 88 for consistency with PEP 8 and Black's default
+skip-string-normalization = true   # Keep string quotes as they are (single or double)
