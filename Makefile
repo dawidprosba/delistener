@@ -49,3 +49,8 @@ clean-env: ## Remove the virtual environment
 # Run all checks (formatting, linting, and tests)
 .PHONY: all
 all: check test ## Run both checks (Black + Flake8) and tests (pytest)
+
+# Run app
+.PHONY: run
+run: ## Run the app
+	$(VENV_DIR)/bin/python main.py
