@@ -14,6 +14,7 @@ REQUIREMENTS_FILE = requirements-dev.txt
 install: ## Install the development dependencies
 	$(PYTHON) -m venv $(VENV_DIR)
 	$(VENV_DIR)/bin/pip install -r $(REQUIREMENTS_FILE)
+	$(VENV_DIR)/bin/pip install -r requirements.txt
 
 # Run Black code formatter
 .PHONY: black
