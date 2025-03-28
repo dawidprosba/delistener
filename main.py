@@ -4,15 +4,19 @@ from bleak import BleakScanner, BleakClient
 import rtmidi
 from time import sleep
 
-from connection.bluetooth_connection import AsyncBluetoothConnectionContextManager, BluetoothConnection
-from devices.digital_piano import DigitalPiano
 
+from devices.pianos.digital_piano import DigitalPiano
+
+import logging
+
+logging.basicConfig(level=logging.INFO, format='[%(levelname)s][%(name)s] %(message)s ')
+logger = logging.getLogger(__name__)
 
 async def main():
-    async with AsyncBluetoothConnectionContextManager("FP-10") as connection:
-        piano = DigitalPiano("FP-10", connection)
-        piano.configure_midi_device()
-        piano.play_test_sound()
+    piano = DigitalPiano("FP-10", "F0:71:E9:51:50:1C")
+    piano.play_test_sound()
+    while True:
+        sleep(1)
 
 
 if __name__ == "__main__":

@@ -9,12 +9,15 @@ VENV_DIR = .venv
 # Define the path to the requirements file
 REQUIREMENTS_FILE = requirements-dev.txt
 
+PIANO_MAC_ADDR = "F0:71:E9:51:50:1C"
+
 # Define the main target for installing dependencies
 .PHONY: install
 install: ## Install the development dependencies
 	$(PYTHON) -m venv $(VENV_DIR)
 	$(VENV_DIR)/bin/pip install -r $(REQUIREMENTS_FILE)
 	$(VENV_DIR)/bin/pip install -r requirements.txt
+	sudo apt install bluez alsa-utils qjackctl jackd a2jmidid -y
 
 # Run Black code formatter
 .PHONY: black
